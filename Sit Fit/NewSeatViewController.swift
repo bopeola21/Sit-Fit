@@ -8,11 +8,15 @@
 
 import UIKit
 
-class NewSeatViewController: UIViewController {
+class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // var seats: [PFObjects]?
     
     @IBOutlet weak var seatNameField: UITextField!
+    
+    @IBOutlet weak var seatImageView: UIImageView!
+    
+    var imagePicker = UIImagePickerController()
     
     
     
@@ -20,7 +24,28 @@ class NewSeatViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        
     }
+    
+    @IBAction func takePicture(sender: AnyObject) {
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        var image = info[UIImagePickerControllerOriginalImage] as UIImage
+
+        self.seatImageView.image = image
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
     
     @IBAction func saveSeat(sender: AnyObject) {
         
@@ -28,6 +53,8 @@ class NewSeatViewController: UIViewController {
         
         var newSeat = PFObject(className: "Seat")
         newSeat["name"] = seatNameField.text
+        newSeat["creator"] = PFUser.currentUser()
+        newSeat.saveInBackground()
         
         FeedData.mainData().feedItems.append(newSeat)
         
@@ -41,14 +68,6 @@ class NewSeatViewController: UIViewController {
         
         
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
 
 
     /*

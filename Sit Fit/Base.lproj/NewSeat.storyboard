@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XIF-41-RbF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--New Seat View Controller-->
@@ -30,6 +31,12 @@
                                     <action selector="cancelSeat:" destination="XIF-41-RbF" eventType="touchUpInside" id="MRt-Ca-KYC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CXJ-Bw-IQk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="QZG-GP-x8h"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKc-ss-crG">
                                 <rect key="frame" x="310" y="540" width="270" height="40"/>
                                 <color key="backgroundColor" red="0.49411767719999999" green="0.94901967050000002" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
@@ -52,21 +59,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qV-m5-iiK">
+                                <rect key="frame" x="36" y="240" width="528" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eBA-IV-jnB"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="XIF-41-RbF" eventType="touchUpInside" id="hOD-YW-ltO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oic-qI-5vy" firstAttribute="leading" secondItem="Ihj-H7-pXW" secondAttribute="leading" constant="20" id="3ym-nI-JNm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6qV-m5-iiK" secondAttribute="trailing" constant="20" id="3zW-df-Qsb"/>
                             <constraint firstItem="dBh-Yn-J1G" firstAttribute="top" secondItem="oic-qI-5vy" secondAttribute="bottom" constant="20" id="6Hp-Dk-wBv"/>
                             <constraint firstItem="dBh-Yn-J1G" firstAttribute="top" secondItem="XKc-ss-crG" secondAttribute="bottom" constant="20" id="Hpc-gU-XjQ"/>
+                            <constraint firstItem="6qV-m5-iiK" firstAttribute="top" secondItem="Ihj-H7-pXW" secondAttribute="topMargin" constant="240" id="P2W-Oo-aPA"/>
                             <constraint firstItem="XKc-ss-crG" firstAttribute="width" secondItem="oic-qI-5vy" secondAttribute="width" id="Zh3-Fl-LTA"/>
                             <constraint firstItem="AMT-74-lDs" firstAttribute="leading" secondItem="Ihj-H7-pXW" secondAttribute="leading" constant="20" id="aoX-G2-mK0"/>
+                            <constraint firstItem="CXJ-Bw-IQk" firstAttribute="top" secondItem="Ihj-H7-pXW" secondAttribute="top" id="bCx-uF-7l4"/>
                             <constraint firstItem="AMT-74-lDs" firstAttribute="top" secondItem="Ihj-H7-pXW" secondAttribute="top" constant="20" id="g0Y-50-8tS"/>
                             <constraint firstAttribute="trailing" secondItem="XKc-ss-crG" secondAttribute="trailing" constant="20" id="iqM-bG-hJT"/>
+                            <constraint firstAttribute="trailing" secondItem="CXJ-Bw-IQk" secondAttribute="trailing" id="mT1-B7-TDO"/>
                             <constraint firstItem="XKc-ss-crG" firstAttribute="leading" secondItem="oic-qI-5vy" secondAttribute="trailing" constant="20" id="oyf-CE-tSn"/>
                             <constraint firstAttribute="trailing" secondItem="AMT-74-lDs" secondAttribute="trailing" constant="20" id="xe6-R2-zoc"/>
+                            <constraint firstItem="6qV-m5-iiK" firstAttribute="leading" secondItem="Ihj-H7-pXW" secondAttribute="leadingMargin" constant="20" id="yDt-2o-52h"/>
+                            <constraint firstItem="CXJ-Bw-IQk" firstAttribute="leading" secondItem="Ihj-H7-pXW" secondAttribute="leading" id="yxX-2b-tbg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="seatImageView" destination="CXJ-Bw-IQk" id="p4z-xb-Hae"/>
                         <outlet property="seatNameField" destination="AMT-74-lDs" id="cce-4h-AQj"/>
                     </connections>
                 </viewController>
