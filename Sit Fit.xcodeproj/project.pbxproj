@@ -27,6 +27,10 @@
 		087A3FDF1A815759001FB331 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087A3FDE1A815759001FB331 /* SystemConfiguration.framework */; };
 		087A3FE11A81577A001FB331 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 087A3FE01A81577A001FB331 /* libsqlite3.dylib */; };
 		087A3FE41A815B78001FB331 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087A3FE31A815B78001FB331 /* FeedData.swift */; };
+		08DC602A1A83B3EE008DD291 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC60291A83B3EE008DD291 /* FeedCell.swift */; };
+		08DC602C1A83CF3D008DD291 /* FourSquareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC602B1A83CF3D008DD291 /* FourSquareRequest.swift */; };
+		08DC602E1A83CFBC008DD291 /* VenuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC602D1A83CFBC008DD291 /* VenuesTableViewController.swift */; };
+		08DC60301A83FB01008DD291 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC602F1A83FB01008DD291 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		087A3FDE1A815759001FB331 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		087A3FE01A81577A001FB331 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		087A3FE31A815B78001FB331 /* FeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
+		08DC60291A83B3EE008DD291 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		08DC602B1A83CF3D008DD291 /* FourSquareRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareRequest.swift; sourceTree = "<group>"; };
+		08DC602D1A83CFBC008DD291 /* VenuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewController.swift; sourceTree = "<group>"; };
+		08DC602F1A83FB01008DD291 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +171,8 @@
 				087A3FA11A810FDF001FB331 /* Main.storyboard */,
 				087A3FC41A813107001FB331 /* FeedTableViewController.swift */,
 				087A3FC61A813156001FB331 /* MyFeedTableViewController.swift */,
+				08DC60291A83B3EE008DD291 /* FeedCell.swift */,
+				08DC602F1A83FB01008DD291 /* MapViewController.swift */,
 			);
 			name = "Main Feeds & Login";
 			sourceTree = "<group>";
@@ -172,6 +182,7 @@
 			children = (
 				087A3FBF1A811763001FB331 /* NewSeat.storyboard */,
 				087A3FC81A81520A001FB331 /* NewSeatViewController.swift */,
+				08DC602D1A83CFBC008DD291 /* VenuesTableViewController.swift */,
 			);
 			name = "New Seat";
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				087A3FE31A815B78001FB331 /* FeedData.swift */,
+				08DC602B1A83CF3D008DD291 /* FourSquareRequest.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -302,12 +314,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DC602C1A83CF3D008DD291 /* FourSquareRequest.swift in Sources */,
+				08DC602A1A83B3EE008DD291 /* FeedCell.swift in Sources */,
 				087A3FA01A810FDF001FB331 /* LoginViewController.swift in Sources */,
+				08DC60301A83FB01008DD291 /* MapViewController.swift in Sources */,
 				087A3FC71A813156001FB331 /* MyFeedTableViewController.swift in Sources */,
 				087A3F9E1A810FDF001FB331 /* AppDelegate.swift in Sources */,
 				087A3FE41A815B78001FB331 /* FeedData.swift in Sources */,
 				087A3FC91A81520A001FB331 /* NewSeatViewController.swift in Sources */,
 				087A3FC51A813107001FB331 /* FeedTableViewController.swift in Sources */,
+				08DC602E1A83CFBC008DD291 /* VenuesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +536,7 @@
 				087A3FB91A810FDF001FB331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		087A3FBA1A810FDF001FB331 /* Build configuration list for PBXNativeTarget "Sit FitTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +545,7 @@
 				087A3FBC1A810FDF001FB331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
